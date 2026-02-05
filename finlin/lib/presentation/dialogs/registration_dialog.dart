@@ -181,9 +181,6 @@ class _RegistrationDialogState extends State<RegistrationDialog> {
         ),
         ElevatedButton(
           onPressed: isLoading ? null : _register,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
-          ),
           child: isLoading
               ? const SizedBox(
                   width: 20,

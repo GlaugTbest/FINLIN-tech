@@ -29,11 +29,6 @@ class _LoginScreenV2State extends ConsumerState<LoginScreenV2> {
     super.dispose();
   }
 
-  void _preencherDadosDeTeste() {
-    _emailController.text = 'joao@example.com';
-    _senhaController.text = 'senha123';
-  }
-
   void _fazerLogin() async {
     final email = _emailController.text.trim();
     final senha = _senhaController.text;
@@ -161,17 +156,6 @@ class _LoginScreenV2State extends ConsumerState<LoginScreenV2> {
               ),
               const SizedBox(height: 24),
 
-              // Botão Dados de Teste
-              SizedBox(
-                width: double.infinity,
-                height: 48,
-                child: OutlinedButton(
-                  onPressed: isLoading ? null : _preencherDadosDeTeste,
-                  child: const Text('🧪 Preencher Dados de Teste'),
-                ),
-              ),
-              const SizedBox(height: 12),
-
               // Botão Login
               SizedBox(
                 width: double.infinity,
@@ -237,30 +221,6 @@ class _LoginScreenV2State extends ConsumerState<LoginScreenV2> {
                 ),
               const SizedBox(height: 40),
 
-              // Caixa de informações
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade50,
-                  border: Border.all(color: Colors.blue.shade200),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      '📚 Dados de Teste:',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                    const SizedBox(height: 8),
-                    const SelectableText(
-                      'Email: joao@example.com\nSenha: senha123',
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         ),

@@ -24,11 +24,10 @@ class CategoriasScreen extends ConsumerWidget {
             }
           });
         },
-        backgroundColor: Colors.blue,
-        icon: const Icon(Icons.add, color: Colors.white),
+        icon: const Icon(Icons.add),
         label: const Text(
           'Nova Categoria',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: categoriasAsync.when(

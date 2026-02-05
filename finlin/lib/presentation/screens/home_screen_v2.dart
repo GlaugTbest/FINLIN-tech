@@ -339,19 +339,15 @@ class _HomeScreenV2State extends ConsumerState<HomeScreenV2> {
             }
           });
         },
-        backgroundColor: Colors.blue,
-        icon: const Icon(Icons.add, color: Colors.white),
+        icon: const Icon(Icons.add),
         label: const Text(
           'Nova Conta',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
         elevation: 8,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

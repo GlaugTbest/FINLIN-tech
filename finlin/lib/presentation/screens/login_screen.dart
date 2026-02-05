@@ -62,13 +62,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     }
   }
 
-  /// Preenche com dados de teste
-  void _preencherDados() {
-    _emailController.text = 'joao@example.com';
-    _senhaController.text = 'senha123';
-    ref.read(errorProvider.notifier).clear();
-  }
-
   @override
   Widget build(BuildContext context) {
     final loading = ref.watch(loadingProvider);
@@ -130,17 +123,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               ),
               const SizedBox(height: 24),
 
-              // Botão de teste - preenche com dados de demo
-              SizedBox(
-                width: double.infinity,
-                height: 48,
-                child: OutlinedButton(
-                  onPressed: loading ? null : _preencherDados,
-                  child: const Text('🧪 Usar Dados de Teste'),
-                ),
-              ),
-              const SizedBox(height: 12),
-
               // Botão de login
               SizedBox(
                 width: double.infinity,
@@ -180,31 +162,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
               const SizedBox(height: 40),
 
-              // Informações de teste
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade50,
-                  border: Border.all(color: Colors.blue.shade200),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      '📚 Dados de Teste Disponíveis:',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Email: joao@example.com\nSenha: senha123',
-                      style: Theme.of(context).textTheme.bodySmall,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
