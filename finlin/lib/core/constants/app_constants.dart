@@ -1,14 +1,23 @@
+import 'package:flutter/foundation.dart';
+
 /// Constantes da aplicação
 class AppConstants {
   // URLs da API
   // IMPORTANTE: 'dart:io' quebra o Flutter Web.
-  // Para Android Emulator use: 'http://10.0.2.2:8000'
-  // Para Web/iOS/Desktop use: 'http://127.0.0.1:8000'
+  // Para Android Emulator/Dispositivo: use IP da máquina na rede local
+  // Para Web: se estiver na porta 8000, usa o próprio host; senão, usa IP fixo
 
   static String get apiBaseUrl {
-    // Se quiser suporte automático a Android Emulator, precisa de conditional imports.
-    // Por segurança e para funcionar na Web agora, vamos manter localhost.
-    return 'http://127.0.0.1:8000';
+    const lanBaseUrl = 'http://192.168.0.3:8000';
+
+    if (kIsWeb) {
+      if (Uri.base.port == 8000) {
+        return Uri.base.origin;
+      }
+      return lanBaseUrl;
+    }
+
+    return lanBaseUrl;
   }
 
   // Endpoints
