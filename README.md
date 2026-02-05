@@ -35,6 +35,10 @@ A comunicação entre frontend e backend é feita via **API REST**, com autentic
 - **JWT para autenticação**
 - **Uvicorn** como servidor ASGI
 
+
+###Link para Download
+https://www.mediafire.com/file/ieovctw70vxxgut/FinLIN_-_Controle_De_Finan%25C3%25A7as.apk/file
+
 ---
 
 ## ▶️ Como Rodar o Backend (FastAPI)
